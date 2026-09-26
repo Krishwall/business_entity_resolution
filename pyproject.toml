@@ -1,0 +1,27 @@
+[project]
+name = "business-entity-resolution"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "lightgbm>=4.7.0",
+    "polars>=1.44.2",
+    "pyarrow>=25.0.1",
+    "rapidfuzz>=3.14.6",
+    "scikit-learn>=1.9.1",
+    "sentence-transformers>=6.1.0",
+    "tqdm>=4.70.1",
+]
+[tool.uv]
+required-environments = [
+    "sys_platform == 'win32' and platform_machine == 'AMD64'"
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu124" }
